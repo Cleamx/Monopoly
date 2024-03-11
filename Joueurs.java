@@ -1,10 +1,13 @@
 public class Joueurs {
-    String couleur;
-    int placement = 0;
+    String nom;
+    int placement;
+    int argent;
     int MAX_DEPLACEMENT = 39;
 
-    public Joueurs(String couleur){
-        this.couleur = couleur;
+    public Joueurs(String nom){
+        this.nom = nom;
+        this.argent = 1500;
+        this.placement = 0;
     }
 
     public int setPlacement(int placement){

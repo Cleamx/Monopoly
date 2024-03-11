@@ -4,18 +4,18 @@ public class Menu {
     public static void main(String[] args) {
 
         int nbr_round, deplacement, case_actuelle;
-        String couleurJ1, couleurJ2;
+        String nomJ1, nomJ2;
         Des des = new Des();
 
         try (Scanner sc = new Scanner(System.in)) {
 
             System.out.println("Séléctionnez la couleur du joueur 1 (rouge, bleu, vert, ...) : ");
-            couleurJ1 = sc.nextLine();
-            Joueurs joueur1 = new Joueurs(couleurJ1);
+            nomJ1 = sc.nextLine();
+            Joueurs joueur1 = new Joueurs(nomJ1);
 
             System.out.println("\nSéléctionnez la couleur du joueur 2 (rouge, bleu, vert, ...) : ");
-            couleurJ2 = sc.nextLine();
-            Joueurs joueur2 = new Joueurs(couleurJ2);
+            nomJ2 = sc.nextLine();
+            Joueurs joueur2 = new Joueurs(nomJ2);
 
             Plateau plateau = new Plateau(joueur1, joueur2);
             plateau.setListeCases();
