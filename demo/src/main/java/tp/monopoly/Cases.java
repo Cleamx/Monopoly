@@ -21,6 +21,10 @@ public class Cases {
     public Joueurs getProprietaire() {
         return proprietaire;
     }
+
+    public int getCout() {
+        return cout;
+    }
     
     public void setProprietaire(Joueurs proprietaire) {
         this.proprietaire = proprietaire;

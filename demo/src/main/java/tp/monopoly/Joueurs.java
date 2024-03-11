@@ -1,9 +1,14 @@
 package tp.monopoly;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Joueurs {
     String nom;
     int placement;
     int argent;
     int MAX_DEPLACEMENT = 39;
+    private List<Cases> proprietes = new ArrayList<>();
 
     public Joueurs(String nom){
         this.nom = nom;
@@ -26,6 +31,16 @@ public class Joueurs {
             this.argent += 200;
         }
         return this.placement;
+    }
+
+    public void acheterPropriete(Cases propriete) {
+        if (propriete.getProprietaire() == null && argent >= propriete.getCout()) {
+            argent -= propriete.getCout();
+            proprietes.add(propriete);
+            propriete.setProprietaire(this);
+        } else {
+            System.out.println("Vous ne pouvez pas acheter cette propriété.");
+        }
     }
 
 }
