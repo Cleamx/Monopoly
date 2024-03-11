@@ -15,11 +15,17 @@ public class Joueurs {
         return nom;
     }
 
-    public int setPlacement(int placement){
-        this.placement += placement;
+    public int getPlacement(){
+        return this.placement;
+    }
+
+    public int setPlacement(int deplacement){
+        this.placement += deplacement;
         if (this.placement >= MAX_DEPLACEMENT) {
             this.placement -= MAX_DEPLACEMENT;
+            this.argent += 200;
         }
         return this.placement;
     }
+
 }
