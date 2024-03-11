@@ -18,7 +18,9 @@ public class Cases {
 
     @Override
     public String toString() {
-        return "Cases [position = " + id + ", nom = " + nom +", cout = "+ cout +"]";
+        return "Cases [nom = " + nom + ", cout = " + cout + ", id = " + id + ", groupe = " + groupe + "]";
     }
+
+
     
 }
