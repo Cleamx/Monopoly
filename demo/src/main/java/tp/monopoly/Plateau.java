@@ -1,4 +1,4 @@
-package com.example;
+package tp.monopoly;
 import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.example;
+package tp.monopoly;
 public class Cases {
     String nom;
     int cout;

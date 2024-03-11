@@ -1,4 +1,4 @@
-package com.example;
+package tp.monopoly;
 public class Des {
     int lancer_nbr;
 

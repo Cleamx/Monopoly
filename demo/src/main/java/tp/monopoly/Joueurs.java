@@ -1,4 +1,4 @@
-package com.example;
+package tp.monopoly;
 public class Joueurs {
     String nom;
     int placement;
@@ -9,6 +9,10 @@ public class Joueurs {
         this.nom = nom;
         this.argent = 1500;
         this.placement = 0;
+    }
+
+    public String getNom() {
+        return nom;
     }
 
     public int setPlacement(int placement){
