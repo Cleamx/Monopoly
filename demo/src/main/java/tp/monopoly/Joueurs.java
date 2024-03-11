@@ -35,7 +35,7 @@ public class Joueurs {
 
     public void acheterPropriete(Cases propriete) {
         if (propriete.getProprietaire() == null && argent >= propriete.getCout()) {
-            argent -= propriete.getCout();
+            this.argent -= propriete.getCout();
             proprietes.add(propriete);
             propriete.setProprietaire(this);
         } else {

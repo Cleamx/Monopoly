@@ -2,9 +2,10 @@ package tp.monopoly;
 import java.util.Scanner;
 
 public class Menu {
+    
     public static void main(String[] args) {
 
-        int nbr_round, deplacement, case_actuelle;
+        int nbr_round, deplacement, case_actuelle, choix;
         String nomJ1, nomJ2;
         Des des = new Des();
 
@@ -24,14 +25,24 @@ public class Menu {
             nbr_round = sc.nextInt();
             System.out.println("Vous avez saisi : " + nbr_round);
 
+
             for (int i = 0; i < nbr_round; i++) {
                 System.out.println("Le "+ joueur1.getNom() +" tire les dés");
                 deplacement = des.Lancer();
                 System.out.println("Les dés sont égaux à " + deplacement);
                 
                 case_actuelle = joueur1.setPlacement(deplacement);
-                
                 System.out.println("Le " + joueur1.getNom() + " est à la case " + plateau.getCases(case_actuelle) + "\n");
+                System.out.println("\nVoulez vous acheter cette cases : ");
+                System.out.println("\n1. Oui");
+                System.out.println("\n2. Non");
+                choix = sc.nextInt();
+                if(choix == 1){
+                    joueur1.acheterPropriete(plateau.getCases(case_actuelle));
+                }
+                else if (choix == 2){
+                    continue;
+                }
 
                 System.out.println("Le " + joueur2.getNom() + " tire les dés");
                 deplacement = des.Lancer();
@@ -40,6 +51,16 @@ public class Menu {
                 case_actuelle = joueur2.setPlacement(deplacement);
                 
                 System.out.println("Le " + joueur2.getNom() + " est à la case " + plateau.getCases(case_actuelle) + "\n");
+                System.out.println("\nVoulez vous acheter cette cases : ");
+                System.out.println("\n1. Oui");
+                System.out.println("\n2. Non");
+                choix = sc.nextInt();
+                if(choix == 1){
+                    joueur2.acheterPropriete(plateau.getCases(case_actuelle));
+                }
+                else if (choix == 2){
+                    continue;
+                }
 
 
             }
