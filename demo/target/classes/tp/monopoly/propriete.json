@@ -1,0 +1,254 @@
+{
+    "Groupes": [
+        {
+            "Nom": "Groupe Marron",
+            "Emplacements": [
+                {
+                    "Propriete": "Boulevard de Belleville",
+                    "Cout": 60,
+                    "Position": 1
+                },
+                {
+                    "Propriete": "Rue Lecourbe",
+                    "Cout": 60,
+                    "Position": 3
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Bleu ciel",
+            "Emplacements": [
+                {
+                    "Propriete": "Rue de Vaugirard",
+                    "Cout": 100,
+                    "Position": 6
+                },
+                {
+                    "Propriete": "Rue de Courcelles",
+                    "Cout": 100,
+                    "Position": 8
+                },
+                {
+                    "Propriete": "Avenue de la République",
+                    "Cout": 120,
+                    "Position": 9
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Violet",
+            "Emplacements": [
+                {
+                    "Propriete": "Boulevard de la Villette",
+                    "Cout": 140,
+                    "Position": 11
+                },
+                {
+                    "Propriete": "Avenue de Neuilly",
+                    "Cout": 140,
+                    "Position": 13
+                },
+                {
+                    "Propriete": "Rue de Paradis",
+                    "Cout": 160,
+                    "Position": 14
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Orange",
+            "Emplacements": [
+                {
+                    "Propriete": "Avenue Mozart",
+                    "Cout": 180,
+                    "Position": 16
+                },
+                {
+                    "Propriete": "Boulevard Saint-Michel",
+                    "Cout": 180,
+                    "Position": 18
+                },
+                {
+                    "Propriete": "Place Pigalle",
+                    "Cout": 200,
+                    "Position": 19
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Rouge",
+            "Emplacements": [
+                {
+                    "Propriete": "Avenue Matignon",
+                    "Cout": 220,
+                    "Position": 21
+                },
+                {
+                    "Propriete": "Boulevard Malesherbes",
+                    "Cout": 220,
+                    "Position": 23
+                },
+                {
+                    "Propriete": "Avenue Henri-Martin",
+                    "Cout": 240,
+                    "Position": 24
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Jaune",
+            "Emplacements": [
+                {
+                    "Propriete": "Faubourg Saint-Honoré",
+                    "Cout": 260,
+                    "Position": 26
+                },
+                {
+                    "Propriete": "Place de la Bourse",
+                    "Cout": 260,
+                    "Position": 27
+                },
+                {
+                    "Propriete": "Rue La Fayette",
+                    "Cout": 280,
+                    "Position": 29
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Vert",
+            "Emplacements": [
+                {
+                    "Propriete": "Avenue de Breteuil",
+                    "Cout": 300,
+                    "Position": 31
+                },
+                {
+                    "Propriete": "Avenue Foch",
+                    "Cout": 300,
+                    "Position": 32
+                },
+                {
+                    "Propriete": "Boulevard des Capucines",
+                    "Cout": 320,
+                    "Position": 34
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Bleu",
+            "Emplacements": [
+                {
+                    "Propriete": "Avenue des Champs-Élysées",
+                    "Cout": 350,
+                    "Position": 37
+                },
+                {
+                    "Propriete": "Rue de la Paix",
+                    "Cout": 400,
+                    "Position": 39
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe Gare",
+            "Emplacements": [
+                {
+                    "Propriete": "Gare Montparnasse",
+                    "Cout": 200,
+                    "Position": 5
+                },
+                {
+                    "Propriete": "Gare de Lyon",
+                    "Cout": 200,
+                    "Position": 15
+                },
+                {
+                    "Propriete": "Gare du Nord",
+                    "Cout": 200,
+                    "Position": 25
+                },
+                {
+                    "Propriete": "Gare Saint-Lazare",
+                    "Cout": 200,
+                    "Position": 35
+                }
+            ]
+        },
+        {
+            "Nom": "Groupe à venir",
+            "Emplacements": [
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 2
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 4
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 7
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 10
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 12
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 17
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 20
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 22
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 24
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 28
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 30
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 33
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 36
+                },
+                {
+                    "Propriete": "Case à venir",
+                    "Cout": 0,
+                    "Position": 38
+                }
+            ]
+        }
+    ]
+}
