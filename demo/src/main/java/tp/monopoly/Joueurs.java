@@ -1,5 +1,4 @@
 package tp.monopoly;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +37,7 @@ public class Joueurs {
             this.argent -= propriete.getCout();
             proprietes.add(propriete);
             propriete.setProprietaire(this);
+            System.out.println("Vous avez bien acheté la propriété, il vous reste : " + this.argent );
         } else {
             System.out.println("Vous ne pouvez pas acheter cette propriété.");
         }

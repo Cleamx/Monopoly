@@ -25,7 +25,6 @@ public class Plateau {
             JSONObject obj = new JSONObject(fichier);
             JSONArray groupes = obj.getJSONArray("Groupes");
            
-
             for (int i = 0; i < groupes.length(); i++) {
 
                 JSONObject groupe = groupes.getJSONObject(i);
