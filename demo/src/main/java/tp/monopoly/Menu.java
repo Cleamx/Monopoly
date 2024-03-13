@@ -63,10 +63,24 @@ public class Menu {
         System.out.println("Les dés sont égaux à " + deplacement);
     }
 
+
+
+    /**
+    * Affiche la position actuelle du joueur sur le plateau.
+    *
+    * @param joueur Le joueur dont la position est à afficher.
+    * @param caseActuelle La case sur laquelle le joueur se trouve actuellement.
+    */
     public void afficherPosition(Joueurs joueur, Cases caseActuelle) {
         System.out.println("Le " + joueur.getNom() + " est à la case " + caseActuelle + "\n");
     }
 
+
+    /**
+    * Demande à l'utilisateur s'il souhaite acheter la case actuelle.
+    *
+    * @return Un booléen indiquant si l'utilisateur a choisi d'acheter la case (true) ou non (false).
+    */
     public boolean demanderAchat() {
         System.out.println("\nVoulez vous acheter cette cases : ");
         System.out.println("\n1. Oui");
