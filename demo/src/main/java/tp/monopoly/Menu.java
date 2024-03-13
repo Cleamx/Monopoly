@@ -1,70 +1,78 @@
 package tp.monopoly;
+
 import java.util.Scanner;
 
 public class Menu {
+    private Scanner sc;
+
+
+    /**
+    * Constructeur de la classe Menu.
+    * Initialise un nouvel objet Scanner pour lire les entrées de l'utilisateur.
+    */
+    public Menu() {
+        sc = new Scanner(System.in);
+    }
+
+
+    /**
+    * Demande à l'utilisateur d'entrer le nom du joueur.
+    *
+    * @param numero Le numéro du joueur pour lequel le nom est demandé.
+    * @return Le nom du joueur entré par l'utilisateur.
+    */
+    public String demanderNomJoueur(int numero) {
+        System.out.println("Entrez le nom du joueur " + numero + " : ");
+        return sc.nextLine();
+    }
+
+
+
+    /**
+    * Demande à l'utilisateur de choisir le nombre de rounds pour le jeu.
+    *
+    * @return Le nombre de rounds choisi par l'utilisateur.
+    */
+    public int demanderNombreRounds() {
+        System.out.println("\nChoisir le nombre de rounds :");
+        int nbr_round = sc.nextInt();
+        sc.nextLine(); // consomme le caractère de fin de ligne restant
+        System.out.println("Vous avez saisi : " + nbr_round);
+        return nbr_round;
+    }
+
     
-    public static void main(String[] args) {
 
-        int nbr_round, deplacement, case_actuelle, choix;
-        String nomJ1, nomJ2;
-        Des des = new Des();
-
-        try (Scanner sc = new Scanner(System.in)) {
-
-            System.out.println("Entrez le nom du joueur 1 : ");
-            nomJ1 = sc.nextLine();
-            Joueurs joueur1 = new Joueurs(nomJ1);
-
-            System.out.println("\nEntrez le nom  du joueur 2 : ");
-            nomJ2 = sc.nextLine();
-            Joueurs joueur2 = new Joueurs(nomJ2);
-
-            Plateau plateau = new Plateau(joueur1, joueur2);
-
-            System.out.println("\nChoisir le nombre de rounds :");
-            nbr_round = sc.nextInt();
-            System.out.println("Vous avez saisi : " + nbr_round);
+    /**
+    * Affiche le tour du joueur actuel.
+    *
+    * @param joueur Le joueur dont le tour est actuellement en cours.
+    */
+    public void afficherTour(Joueurs joueur) {
+        System.out.println("Le "+ joueur.getNom() +" tire les dés");
+    }
 
 
-            for (int i = 0; i < nbr_round; i++) {
-                System.out.println("Le "+ joueur1.getNom() +" tire les dés");
-                deplacement = des.Lancer();
-                System.out.println("Les dés sont égaux à " + deplacement);
-                
-                case_actuelle = joueur1.setPlacement(deplacement);
-                System.out.println("Le " + joueur1.getNom() + " est à la case " + plateau.getCases(case_actuelle) + "\n");
-                System.out.println("\nVoulez vous acheter cette cases : ");
-                System.out.println("\n1. Oui");
-                System.out.println("\n2. Non");
-                choix = sc.nextInt();
-                if(choix == 1){
-                    joueur1.acheterPropriete(plateau.getCases(case_actuelle));
-                }
-                else if (choix == 2){
-                    continue;
-                }
 
-                System.out.println("Le " + joueur2.getNom() + " tire les dés");
-                deplacement = des.Lancer();
-                System.out.println("Les dés sont égaux à " + deplacement);
-                
-                case_actuelle = joueur2.setPlacement(deplacement);
-                
-                System.out.println("Le " + joueur2.getNom() + " est à la case " + plateau.getCases(case_actuelle) + "\n");
-                System.out.println("\nVoulez vous acheter cette cases : ");
-                System.out.println("\n1. Oui");
-                System.out.println("\n2. Non");
-                choix = sc.nextInt();
-                if(choix == 1){
-                    joueur2.acheterPropriete(plateau.getCases(case_actuelle));
-                }
-                else if (choix == 2){
-                    continue;
-                }
+    /**
+    * Affiche le résultat du lancer de dés.
+    *
+    * @param deplacement Le nombre obtenu après le lancer de dés.
+    */
+    public void afficherResultatDes(int deplacement) {
+        System.out.println("Les dés sont égaux à " + deplacement);
+    }
 
+    public void afficherPosition(Joueurs joueur, Cases caseActuelle) {
+        System.out.println("Le " + joueur.getNom() + " est à la case " + caseActuelle + "\n");
+    }
 
-            }
-        }
-
+    public boolean demanderAchat() {
+        System.out.println("\nVoulez vous acheter cette cases : ");
+        System.out.println("\n1. Oui");
+        System.out.println("\n2. Non");
+        int choix = sc.nextInt();
+        sc.nextLine(); // consomme le caractère de fin de ligne restant
+        return choix == 1;
     }
 }
