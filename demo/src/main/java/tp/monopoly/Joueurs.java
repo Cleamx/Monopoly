@@ -32,6 +32,16 @@ public class Joueurs {
         return this.placement;
     }
 
+
+    /**
+    * Permet au joueur d'acheter une propriété.
+    * Si la propriété n'a pas de propriétaire et que le joueur a assez d'argent, le joueur achète la propriété.
+    * Le coût de la propriété est déduit de l'argent du joueur, la propriété est ajoutée à la liste des propriétés du joueur,
+    * et le joueur est défini comme le nouveau propriétaire de la propriété.
+    * Si la propriété a déjà un propriétaire ou si le joueur n'a pas assez d'argent, un message est affiché indiquant que le joueur ne peut pas acheter la propriété.
+    *
+    * @param propriete La propriété que le joueur souhaite acheter.
+    */
     public void acheterPropriete(Cases propriete) {
         if (propriete.getProprietaire() == null && argent >= propriete.getCout()) {
             this.argent -= propriete.getCout();

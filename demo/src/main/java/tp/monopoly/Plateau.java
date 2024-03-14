@@ -17,7 +17,14 @@ public class Plateau {
         this.joueur2 = joueur2;
         initialise_Cases();
     }
-    
+
+
+    /**
+    * Initialise les cases du plateau à partir d'un fichier JSON.
+    * Le fichier JSON doit contenir un tableau de "Groupes", chaque groupe contenant un tableau d'"Emplacements".
+    * Chaque emplacement doit avoir une "Propriete" (nom), un "Cout", et une "Position".
+    * Pour chaque emplacement, une nouvelle case est créée et ajoutée à la liste des cases du plateau.
+    */
     private void initialise_Cases() {
         String fichier;
         try {
@@ -46,6 +53,14 @@ public class Plateau {
         }
     }
 
+    
+
+    /**
+    * Récupère la case à une position spécifique sur le plateau.
+    *
+    * @param position La position de la case à récupérer.
+    * @return La case à la position spécifiée, ou null si aucune case n'est trouvée à cette position.
+    */
     public Cases getCases(int position) {
         for (Cases c : this.liste) {
             if (c.getPosition() == position) {
