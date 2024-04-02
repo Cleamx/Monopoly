@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Cases.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">tp.monopoly</a> &gt; <span class="el_source">Cases.java</span></div><h1>Cases.java</h1><pre class="source lang-java linenums">package tp.monopoly;
+public class Cases {
+    String nom;
+    int cout;
+    int id;
+    String groupe;
+    Joueurs proprietaire;
+
+<span class="nc" id="L9">    public Cases(int id, String nom, int cout, String groupe){</span>
+<span class="nc" id="L10">        this.id = id;</span>
+<span class="nc" id="L11">        this.nom = nom;</span>
+<span class="nc" id="L12">        this.cout = cout;  </span>
+<span class="nc" id="L13">        this.groupe = groupe;</span>
+<span class="nc" id="L14">        this.proprietaire = null;</span>
+<span class="nc" id="L15">    }</span>
+
+    public int getPosition() {
+<span class="nc" id="L18">        return this.id;</span>
+    }
+    
+    public Joueurs getProprietaire() {
+<span class="nc" id="L22">        return proprietaire;</span>
+    }
+
+    public int getCout() {
+<span class="nc" id="L26">        return cout;</span>
+    }
+    
+    public void setProprietaire(Joueurs proprietaire) {
+<span class="nc" id="L30">        this.proprietaire = proprietaire;</span>
+<span class="nc" id="L31">    }</span>
+    
+    public boolean estAchetable() {
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        return proprietaire == null;</span>
+    }
+
+
+    @Override
+    public String toString() {
+<span class="nc" id="L40">        return &quot;Cases [nom = &quot; + nom + &quot;, cout = &quot; + cout + &quot;, id = &quot; + id + &quot;, groupe = &quot; + groupe + &quot;]&quot;;</span>
+    }
+
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

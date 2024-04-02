@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Menu.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">tp.monopoly</a> &gt; <span class="el_source">Menu.java</span></div><h1>Menu.java</h1><pre class="source lang-java linenums">package tp.monopoly;
+
+import java.util.Scanner;
+
+public class Menu {
+    private Scanner sc;
+
+
+    /**
+    * Constructeur de la classe Menu.
+    * Initialise un nouvel objet Scanner pour lire les entrées de l'utilisateur.
+    */
+<span class="fc" id="L13">    public Menu() {</span>
+<span class="fc" id="L14">        sc = new Scanner(System.in);</span>
+<span class="fc" id="L15">    }</span>
+
+
+    /**
+    * Demande à l'utilisateur d'entrer le nom du joueur.
+    *
+    * @param numero Le numéro du joueur pour lequel le nom est demandé.
+    * @return Le nom du joueur entré par l'utilisateur.
+    */
+    public String demanderNomJoueur(int numero) {
+<span class="nc" id="L25">        System.out.println(&quot;Entrez le nom du joueur &quot; + numero + &quot; : &quot;);</span>
+<span class="nc" id="L26">        return sc.nextLine();</span>
+    }
+
+
+
+    /**
+    * Demande à l'utilisateur de choisir le nombre de rounds pour le jeu.
+    *
+    * @return Le nombre de rounds choisi par l'utilisateur.
+    */
+    public int demanderNombreRounds() {
+<span class="nc" id="L37">        System.out.println(&quot;\nChoisir le nombre de rounds :&quot;);</span>
+<span class="nc" id="L38">        int nbr_round = sc.nextInt();</span>
+<span class="nc" id="L39">        sc.nextLine(); // consomme le caractère de fin de ligne restant</span>
+<span class="nc" id="L40">        System.out.println(&quot;Vous avez saisi : &quot; + nbr_round);</span>
+<span class="nc" id="L41">        return nbr_round;</span>
+    }
+
+    
+
+    /**
+    * Affiche le tour du joueur actuel.
+    *
+    * @param joueur Le joueur dont le tour est actuellement en cours.
+    */
+    public void afficherTour(Joueurs joueur) {
+<span class="nc" id="L52">        System.out.println(joueur.getNom() +&quot; tire les dés&quot;);</span>
+<span class="nc" id="L53">    }</span>
+
+
+
+    /**
+    * Affiche le résultat du lancer de dés.
+    *
+    * @param deplacement Le nombre obtenu après le lancer de dés.
+    */
+    public void afficherResultatDes(int deplacement) {
+<span class="nc" id="L63">        System.out.println(&quot;Les dés sont égaux à &quot; + deplacement);</span>
+<span class="nc" id="L64">    }</span>
+
+
+
+    /**
+    * Affiche la position actuelle du joueur sur le plateau.
+    *
+    * @param joueur Le joueur dont la position est à afficher.
+    * @param caseActuelle La case sur laquelle le joueur se trouve actuellement.
+    */
+    public void afficherPosition(Joueurs joueur, Cases caseActuelle) {
+<span class="nc" id="L75">        System.out.println(&quot;Le &quot; + joueur.getNom() + &quot; est à la case &quot; + caseActuelle + &quot;\n&quot;);</span>
+<span class="nc" id="L76">    }</span>
+
+
+    /**
+    * Demande à l'utilisateur s'il souhaite acheter la case actuelle.
+    *
+    * @return Un booléen indiquant si l'utilisateur a choisi d'acheter la case (true) ou non (false).
+    */
+    public boolean demanderAchat() {
+<span class="nc" id="L85">        System.out.println(&quot;\nVoulez vous acheter cette cases : &quot;);</span>
+<span class="nc" id="L86">        System.out.println(&quot;\n1. Oui&quot;);</span>
+<span class="nc" id="L87">        System.out.println(&quot;\n2. Non&quot;);</span>
+<span class="nc" id="L88">        int choix = sc.nextInt();</span>
+<span class="nc" id="L89">        sc.nextLine(); // consomme le caractère de fin de ligne restant</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">        return choix == 1;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

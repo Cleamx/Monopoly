@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Joueurs.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">tp.monopoly</a> &gt; <span class="el_source">Joueurs.java</span></div><h1>Joueurs.java</h1><pre class="source lang-java linenums">package tp.monopoly;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Joueurs {
+    String nom;
+    int placement;
+    int argent;
+<span class="nc" id="L9">    int MAX_DEPLACEMENT = 39;</span>
+<span class="nc" id="L10">    private List&lt;Cases&gt; proprietes = new ArrayList&lt;&gt;();</span>
+
+<span class="nc" id="L12">    public Joueurs(String nom){</span>
+<span class="nc" id="L13">        this.nom = nom;</span>
+<span class="nc" id="L14">        this.argent = 1500;</span>
+<span class="nc" id="L15">        this.placement = 0;</span>
+<span class="nc" id="L16">    }</span>
+
+    public String getNom() {
+<span class="nc" id="L19">        return nom;</span>
+    }
+
+    public int getPlacement(){
+<span class="nc" id="L23">        return this.placement;</span>
+    }
+
+    public int setPlacement(int deplacement){
+<span class="nc" id="L27">        this.placement += deplacement;</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (this.placement &gt;= MAX_DEPLACEMENT) {</span>
+<span class="nc" id="L29">            this.placement -= MAX_DEPLACEMENT;</span>
+<span class="nc" id="L30">            this.argent += 200;</span>
+        }
+<span class="nc" id="L32">        return this.placement;</span>
+    }
+
+
+    /**
+    * Permet au joueur d'acheter une propriété.
+    * Si la propriété n'a pas de propriétaire et que le joueur a assez d'argent, le joueur achète la propriété.
+    * Le coût de la propriété est déduit de l'argent du joueur, la propriété est ajoutée à la liste des propriétés du joueur,
+    * et le joueur est défini comme le nouveau propriétaire de la propriété.
+    * Si la propriété a déjà un propriétaire ou si le joueur n'a pas assez d'argent, un message est affiché indiquant que le joueur ne peut pas acheter la propriété.
+    *
+    * @param propriete La propriété que le joueur souhaite acheter.
+    */
+    public void acheterPropriete(Cases propriete) {
+<span class="nc bnc" id="L46" title="All 4 branches missed.">        if (propriete.getProprietaire() == null &amp;&amp; argent &gt;= propriete.getCout()) {</span>
+<span class="nc" id="L47">            this.argent -= propriete.getCout();</span>
+<span class="nc" id="L48">            proprietes.add(propriete);</span>
+<span class="nc" id="L49">            propriete.setProprietaire(this);</span>
+<span class="nc" id="L50">            System.out.println(&quot;Vous avez bien acheté la propriété, il vous reste : &quot; + this.argent );</span>
+<span class="nc" id="L51">        } else {</span>
+<span class="nc" id="L52">            System.out.println(&quot;Vous ne pouvez pas acheter cette propriété.&quot;);</span>
+        }
+<span class="nc" id="L54">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

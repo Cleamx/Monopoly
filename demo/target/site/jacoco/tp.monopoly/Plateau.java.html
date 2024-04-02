@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Plateau.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">tp.monopoly</a> &gt; <span class="el_source">Plateau.java</span></div><h1>Plateau.java</h1><pre class="source lang-java linenums">package tp.monopoly;
+import java.util.ArrayList;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
+public class Plateau {
+<span class="nc" id="L10">    ArrayList&lt;Cases&gt; liste = new ArrayList&lt;Cases&gt;();</span>
+<span class="nc" id="L11">    int CASES_MONOPOLY = 40;</span>
+    Joueurs joueur1, joueur2;
+    
+
+<span class="nc" id="L15">    public Plateau(Joueurs joueur1, Joueurs joueur2){</span>
+<span class="nc" id="L16">        this.joueur1 = joueur1;</span>
+<span class="nc" id="L17">        this.joueur2 = joueur2;</span>
+<span class="nc" id="L18">        initialise_Cases();</span>
+<span class="nc" id="L19">    }</span>
+
+
+    /**
+    * Initialise les cases du plateau à partir d'un fichier JSON.
+    * Le fichier JSON doit contenir un tableau de &quot;Groupes&quot;, chaque groupe contenant un tableau d'&quot;Emplacements&quot;.
+    * Chaque emplacement doit avoir une &quot;Propriete&quot; (nom), un &quot;Cout&quot;, et une &quot;Position&quot;.
+    * Pour chaque emplacement, une nouvelle case est créée et ajoutée à la liste des cases du plateau.
+    */
+    private void initialise_Cases() {
+        String fichier;
+        try {
+<span class="nc" id="L31">            fichier = new String(Files.readAllBytes(Paths.get(getClass().getResource(&quot;propriete.json&quot;).toURI())));</span>
+<span class="nc" id="L32">            JSONObject obj = new JSONObject(fichier);</span>
+<span class="nc" id="L33">            JSONArray groupes = obj.getJSONArray(&quot;Groupes&quot;);</span>
+           
+<span class="nc bnc" id="L35" title="All 2 branches missed.">            for (int i = 0; i &lt; groupes.length(); i++) {</span>
+
+<span class="nc" id="L37">                JSONObject groupe = groupes.getJSONObject(i);</span>
+<span class="nc" id="L38">                JSONArray emplacements = groupe.getJSONArray(&quot;Emplacements&quot;);</span>
+<span class="nc" id="L39">                System.out.println(groupe.getString(&quot;Nom&quot;));</span>
+
+<span class="nc bnc" id="L41" title="All 2 branches missed.">                for (int j = 0; j &lt; emplacements.length(); j++) {</span>
+
+<span class="nc" id="L43">                    JSONObject emplacement = emplacements.getJSONObject(j);</span>
+<span class="nc" id="L44">                    String nom = emplacement.getString(&quot;Propriete&quot;);</span>
+<span class="nc" id="L45">                    int cout = emplacement.getInt(&quot;Cout&quot;);</span>
+<span class="nc" id="L46">                    int position = emplacement.getInt(&quot;Position&quot;);</span>
+<span class="nc" id="L47">                    Cases cases = new Cases(position, nom, cout, groupe.getString(&quot;Nom&quot;));</span>
+<span class="nc" id="L48">                    this.liste.add(cases);</span>
+                }
+            }
+<span class="nc" id="L51">        } catch (Exception e) {</span>
+<span class="nc" id="L52">            e.printStackTrace();</span>
+        }
+<span class="nc" id="L54">    }</span>
+
+
+    /**
+    * Récupère la case à une position spécifique sur le plateau.
+    *
+    * @param position La position de la case à récupérer.
+    * @return La case à la position spécifiée, ou null si aucune case n'est trouvée à cette position.
+    */
+    public Cases getCases(int position) {
+<span class="nc bnc" id="L64" title="All 2 branches missed.">        for (Cases c : this.liste) {</span>
+<span class="nc bnc" id="L65" title="All 2 branches missed.">            if (c.getPosition() == position) {</span>
+<span class="nc" id="L66">                return c;</span>
+            }
+        }
+<span class="nc" id="L69">        return null; </span>
+    }
+
+
+    @Override
+    public String toString() {
+<span class="nc" id="L75">        return &quot;Cases [liste=&quot; + liste + &quot;]&quot;;</span>
+    }
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

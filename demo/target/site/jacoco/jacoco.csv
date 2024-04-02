@@ -1,0 +1,8 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+demo,tp.monopoly,Joueurs,91,0,6,0,22,0,8,0,5,0
+demo,tp.monopoly,Main,6,0,0,0,3,0,2,0,2,0
+demo,tp.monopoly,Controleur,112,0,4,0,26,0,5,0,3,0
+demo,tp.monopoly,Plateau,135,0,8,0,29,0,8,0,4,0
+demo,tp.monopoly,Cases,64,0,2,0,14,0,8,0,7,0
+demo,tp.monopoly,Des,26,0,0,0,6,0,4,0,4,0
+demo,tp.monopoly,Menu,100,9,2,0,19,3,7,1,6,1
