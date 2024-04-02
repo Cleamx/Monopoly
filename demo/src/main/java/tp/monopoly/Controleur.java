@@ -48,7 +48,10 @@ public class Controleur {
     */
     private void jouerTour(Joueurs joueur) {
         menu.afficherTour(joueur);
-        int deplacement = des.Lancer();
+        des.lancerDes();
+        int desUn = des.getDesUn();
+        int desDeux = des.getDesDeux();
+        int deplacement = desUn + desDeux;
         menu.afficherResultatDes(deplacement);
         int case_actuelle = joueur.setPlacement(deplacement);
         menu.afficherPosition(joueur, plateau.getCases(case_actuelle));

@@ -49,7 +49,7 @@ public class Menu {
     * @param joueur Le joueur dont le tour est actuellement en cours.
     */
     public void afficherTour(Joueurs joueur) {
-        System.out.println("Le "+ joueur.getNom() +" tire les dés");
+        System.out.println(joueur.getNom() +" tire les dés");
     }
 
 

@@ -1,15 +1,22 @@
 package tp.monopoly;
+
 public class Des {
     int lancer_nbr;
 
-    public Des(){
+    private int desUn;
+    private int desDeux;
 
+    public int getDesUn() {
+        return desUn;
     }
 
-    public int Lancer(){
-        int res = (int)(Math.random() * 10) + 2;
+    public int getDesDeux() {
+        return desDeux;
+    }
 
-        return res;
+    public void lancerDes() {
+        this.desUn = (int)(Math.random() * 6) + 1;;
+        this.desDeux = (int)(Math.random() * 6) + 1;;
     }
 
 }

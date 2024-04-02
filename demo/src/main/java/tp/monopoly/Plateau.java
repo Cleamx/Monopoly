@@ -53,7 +53,6 @@ public class Plateau {
         }
     }
 
-    
 
     /**
     * Récupère la case à une position spécifique sur le plateau.

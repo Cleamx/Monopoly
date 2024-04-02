@@ -176,75 +176,75 @@
             ]
         },
         {
-            "Nom": "Groupe à venir",
+            "Nom": "Cases spéciales",
             "Emplacements": [
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Case départ",
+                    "Cout": 0,
+                    "Position": 0
+                },
+                {
+                    "Propriete": "Chance",
                     "Cout": 0,
                     "Position": 2
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Caisse de Communauté",
                     "Cout": 0,
                     "Position": 4
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Impôts sur le revenu",
                     "Cout": 0,
                     "Position": 7
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Visite en prison",
                     "Cout": 0,
                     "Position": 10
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Parc gratuit",
                     "Cout": 0,
                     "Position": 12
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Compagnie de distribution d'électricité",
                     "Cout": 0,
                     "Position": 17
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Caisse de Communauté",
                     "Cout": 0,
                     "Position": 20
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Taxe de luxe",
                     "Cout": 0,
                     "Position": 22
                 },
                 {
-                    "Propriete": "Case à venir",
-                    "Cout": 0,
-                    "Position": 24
-                },
-                {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Compagnie de distribution d'eau",
                     "Cout": 0,
                     "Position": 28
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Aller en prison",
                     "Cout": 0,
                     "Position": 30
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Caisse de Communauté",
                     "Cout": 0,
                     "Position": 33
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Chance",
                     "Cout": 0,
                     "Position": 36
                 },
                 {
-                    "Propriete": "Case à venir",
+                    "Propriete": "Taxe de luxe",
                     "Cout": 0,
                     "Position": 38
                 }
