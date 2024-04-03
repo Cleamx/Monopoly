@@ -64,10 +64,14 @@ public class Controleur {
     
             // Vérifie si la case actuelle est une CaseSpeciale
             if (caseActuelle instanceof CaseSpeciale) {
+                System.out.println("Le joueur " + joueur.getNom() + " est sur une CaseSpeciale.");
                 ((CaseSpeciale) caseActuelle).appliquerEffet(joueur);
             } else if (caseActuelle.getCout() != 0 && menu.demanderAchat()) {
                 // Le joueur est sur une case normale et peut acheter la propriété
+                System.out.println("Le joueur " + joueur.getNom() + " est sur une case normale et peut acheter la propriété.");
                 joueur.acheterPropriete(caseActuelle);
+            } else {
+                System.out.println("Le joueur " + joueur.getNom() + " est sur une case normale mais ne peut pas acheter la propriété.");
             }
         }
     }

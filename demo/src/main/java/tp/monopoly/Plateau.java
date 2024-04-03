@@ -44,7 +44,15 @@ public class Plateau {
                     String nom = emplacement.getString("Propriete");
                     int cout = emplacement.getInt("Cout");
                     int position = emplacement.getInt("Position");
-                    Cases cases = new Cases(position, nom, cout, groupe.getString("Nom"));
+                    Cases cases;
+
+                    if (nom.equals("Aller en prison")) {
+                        cases = new CaseAllerEnPrison(position, nom, cout, groupe.getString("Nom"));
+                    } else {
+                        // Créez les autres types de cases ici
+                        cases = new Cases(position, nom, cout, groupe.getString("Nom"));
+                    }
+
                     this.liste.add(cases);
                 }
             }
