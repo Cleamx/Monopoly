@@ -41,6 +41,12 @@ public class Controleur {
     }
 
 
+    /**
+     * Fait jouer un tour à un joueur.
+     * Le joueur lance les dés, se déplace sur le plateau, affiche sa position, et achète la propriété sur laquelle il se trouve si possible.
+     * Si le joueur ne peut pas acheter la propriété, un message est affiché.
+     * @param joueur Le joueur qui joue le tour.
+     */
     private void jouerTour(Joueurs joueur) {
         menu.afficherTour(joueur);
         des.lancerDes();
