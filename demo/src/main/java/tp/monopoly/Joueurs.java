@@ -56,7 +56,9 @@ public class Joueurs {
 
     public void deduireArgent(int montant){
         this.argent -= montant;
-        System.out.println("vous etes tombe sur une case impot ou taxe de luxe , vous avez paye " + montant + " il vous reste : " + this.argent);
+    }
+    public void ajouterArgent(int montant){
+        this.argent += montant;
     }
 
     public void essayerSortirDePrison() {

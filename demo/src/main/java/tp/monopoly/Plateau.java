@@ -1,6 +1,7 @@
 package tp.monopoly;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import org.json.JSONArray;
@@ -13,13 +14,15 @@ public class Plateau {
     int CASES_MONOPOLY = 40;
     Joueurs joueur1, joueur2;
     Random rand = new Random();
+    Cartes deck;
+
 
     public Plateau(Joueurs joueur1, Joueurs joueur2) {
         this.joueur1 = joueur1;
         this.joueur2 = joueur2;
         initialise_Cases();
-        new Cartes().initialise_Cartes();
-        ;
+        this.deck = new Cartes();
+
     }
 
     /**
@@ -78,16 +81,20 @@ public class Plateau {
      * @return La case à la position spécifiée, ou null si aucune case n'est trouvée
      *         à cette position.
      */
-    public Cases getCases(int position) {
-        Cartes deck = new Cartes();
+    public List<Object> getCases(int position) {
+        List<Object> result = new ArrayList<>();
+        int montant_cartes_speciale = 0;
         for (Cases c : this.liste) {
             if (c.getPosition() == position) {
+                result.clear();
                 if (c.getNom().equals("Caisse de Communauté")) {
-                    deck.piocherCarte("Caisse de Communauté");
+                    montant_cartes_speciale = deck.piocherCarte("Caisse de Communauté");
                 } else if (c.getNom().equals("Chance")) {
-                    deck.piocherCarte("Chance");
+                    montant_cartes_speciale = deck.piocherCarte("Chance");
                 }
-                return c;
+                result.add(c);
+                result.add(montant_cartes_speciale);
+                return result;
             }
         }
         return null;

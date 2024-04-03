@@ -4,7 +4,7 @@
         "id": 1,
         "description": "Amende pour excès de vitesse. Payez 15€.",
         "action": "payer",
-        "montant": 15
+        "montant": -15
       },
       {
         "id": 2,
@@ -28,7 +28,7 @@
         "id": 5,
         "description": "Vous avez été élu président du conseil d'administration. Payez à chaque joueur 50€.",
         "action": "payer_de_tous",
-        "montant": 50
+        "montant": -50
       }
     ],
 
@@ -43,7 +43,7 @@
         "id": 2,
         "description": "Payez les frais de scolarité. Payez 50€.",
         "action": "payer",
-        "montant": 50
+        "montant": -50
       },
       {
         "id": 3,
@@ -67,13 +67,13 @@
         "id": 6,
         "description": "Payez la note du médecin. Payez 100€.",
         "action": "payer",
-        "montant": 100
+        "montant": -100
       },
       {
         "id": 7,
         "description": "Payez une amende pour ivresse. Payez 20€.",
         "action": "payer",
-        "montant": 20
+        "montant": -20
       },
       {
         "id": 8,
@@ -91,7 +91,7 @@
         "id": 10,
         "description": "Erreur de calcul de la banque en votre défaveur. Payez 50€.",
         "action": "payer",
-        "montant": 50
+        "montant": -50
       }
     ]
   }

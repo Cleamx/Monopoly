@@ -36,16 +36,17 @@ public class Cartes {
     public int getMontant() {
         return montant;
     }
-    public List<Cartes> getCartesChance(){
+
+    public List<Cartes> getCartesChance() {
         return cartesChance;
     }
-    
-    public List<Cartes> getCartesCommunaute(){
+
+    public List<Cartes> getCartesCommunaute() {
         return cartesCommunaute;
     }
 
     public Cartes() {
-
+        initialise_Cartes();
     }
 
     public void initialise_Cartes() {
@@ -80,25 +81,33 @@ public class Cartes {
         }
     }
 
-    void piocherCarte(String type) {
-    System.out.println("Vous piochez une carte " + type + " : ");
-    Cartes deck = new Cartes();
-    List<Cartes> deck_cartes = type.equals("Caisse de Communauté") ? deck.getCartesCommunaute() : deck.getCartesChance();
+    public int piocherCarte(String type) {
+        System.out.println("Vous piochez une carte " + type + " : ");
+        Cartes deck = new Cartes();
+        int montant = 0;
+        List<Cartes> deck_cartes = type.equals("Caisse de Communauté") ? deck.getCartesCommunaute()
+                : deck.getCartesChance();
 
-    if (!deck_cartes.isEmpty()) {
-        Random rand = new Random();
-        int randomIndex = rand.nextInt(deck_cartes.size());
-        Cartes carte_tire = deck_cartes.get(randomIndex);
-        System.out.println(carte_tire.getDescription());
-        
-    } else {
-        System.out.println("La liste de cartes est vide !");
+        if (!deck_cartes.isEmpty()) {
+            Random rand = new Random();
+            int randomIndex = rand.nextInt(deck_cartes.size());
+            Cartes carte_tire = deck_cartes.get(randomIndex);
+            System.out.println(carte_tire.getDescription());
+            if (carte_tire.getAction().equals("recevoir") || carte_tire.getAction().equals("recevoir_de_tous")) {
+                montant = carte_tire.getMontant();
+            } else if (carte_tire.getAction().equals("payer") || carte_tire.getAction().equals("payer_de_tous")){
+                montant = carte_tire.getMontant();
+            }
+            
+        } else {
+            System.out.println("La liste de cartes est vide !");
+        }
+        return montant;
     }
-}
 
     @Override
     public String toString() {
         return "Cartes [id=" + id + ", description=" + description + ", action=" + action + ", montant=" + montant
-                +"]";
+                + "]";
     }
 }

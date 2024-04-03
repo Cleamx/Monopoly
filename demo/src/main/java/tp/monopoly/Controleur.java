@@ -1,5 +1,6 @@
 package tp.monopoly;
 
+import java.util.List;
 
 public class Controleur {
     private Plateau plateau;
@@ -59,7 +60,13 @@ public class Controleur {
             int deplacement = desUn + desDeux;
             menu.afficherResultatDes(deplacement);
             int case_actuelle = joueur.setPlacement(deplacement);
-            Cases caseActuelle = plateau.getCases(case_actuelle);
+            List<Object> res = plateau.getCases(case_actuelle);
+            Cases caseActuelle = (Cases) res.get(0);
+            int montant = (int) res.get(1);
+            if (montant != 0) {
+                joueur.ajouterArgent(montant);
+                System.out.println("Vous avez " + joueur.getArgent() + ".\n");
+            }
             menu.afficherPosition(joueur, caseActuelle);
     
             // Vérifie si la case actuelle est une CaseSpeciale
