@@ -8,6 +8,8 @@ public class Joueurs {
     int argent;
     int MAX_DEPLACEMENT = 40;
     private List<Cases> proprietes = new ArrayList<>();
+    private int toursEnPrison = 0;
+    private boolean enPrison = false;
 
     public Joueurs(String nom){
         this.nom = nom;
@@ -39,6 +41,51 @@ public class Joueurs {
             System.out.println("Vous avez passé la case départ, vous recevez 200 !");
         }
         return this.placement;
+    }
+
+    public void envoyerEnPrison(){
+        this.placement = 10;
+        this.enPrison = true;
+        this.toursEnPrison = 0;
+
+    }
+
+    public boolean estEnPrison(){
+        return this.enPrison;
+    }
+
+    public void deduireArgent(int montant){
+        this.argent -= montant;
+        System.out.println("vous etes tombe sur une case impot ou taxe de luxe , vous avez paye " + montant + " il vous reste : " + this.argent);
+    }
+
+    public void essayerSortirDePrison() {
+        // Crée une instance de la classe Des
+        Des des = new Des();
+        Menu menu = new Menu();
+    
+        // Lance les dés
+        des.lancerDes();
+        int desUn = des.getDesUn();
+        int desDeux = des.getDesDeux();
+    
+        // Vérifie si le joueur a fait un double
+        if (desUn == desDeux) {
+            this.enPrison = false;
+            System.out.println("Vous avez fait un double, vous sortez de prison !");
+        } else if (this.argent >= 50 && menu.demanderPayerAmende()) {
+            // Le joueur a la possibilité de payer une amende de 50 pour sortir de prison
+            this.argent -= 50;
+            this.enPrison = false;
+            System.out.println("Vous avez payé une amende de 50, vous sortez de prison !");
+        } else {
+            this.toursEnPrison++;
+            if (this.toursEnPrison >= 3) {
+                // Le joueur est libéré après 3 tours en prison
+                this.enPrison = false;
+                System.out.println("Vous avez passé 3 tours en prison, vous êtes libéré !");
+            }
+        }
     }
 
 

@@ -1,7 +1,6 @@
 package tp.monopoly;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import org.json.JSONArray;
@@ -51,7 +50,19 @@ public class Plateau {
                     String nom = emplacement.getString("Propriete");
                     int cout = emplacement.getInt("Cout");
                     int position = emplacement.getInt("Position");
-                    Cases cases = new Cases(position, nom, cout, groupe.getString("Nom"));
+                    Cases cases;
+
+                    if (nom.equals("Aller en prison")) {
+                        cases = new CaseAllerEnPrison(position, nom, cout, groupe.getString("Nom"));
+                    } else if (nom.equals("Impôts sur le revenu")) {
+                        cases = new CaseImpotsSurLeRevenu(position, nom, cout, groupe.getString("Nom"));
+                    } else if (nom.equals("Taxe de luxe")) {
+                        cases = new CaseTaxeDeLuxe(position, nom, cout, groupe.getString("Nom"));
+                    } else {
+                        // Créez les autres types de cases ici
+                        cases = new Cases(position, nom, cout, groupe.getString("Nom"));
+                    }
+
                     this.liste.add(cases);
                 }
             }

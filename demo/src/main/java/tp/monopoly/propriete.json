@@ -176,6 +176,21 @@
             ]
         },
         {
+            "Nom": "Groupe Compagnie",
+            "Emplacements": [
+                {
+                    "Propriete": "Compagnie de distribution d'électricité",
+                    "Cout": 150,
+                    "Position": 17
+                },
+                {
+                    "Propriete": "Compagnie de distribution d'eau",
+                    "Cout": 150,
+                    "Position": 28
+                }
+            ]
+        },
+        {
             "Nom": "Cases spéciales",
             "Emplacements": [
                 {
@@ -209,11 +224,6 @@
                     "Position": 12
                 },
                 {
-                    "Propriete": "Compagnie de distribution d'électricité",
-                    "Cout": 0,
-                    "Position": 17
-                },
-                {
                     "Propriete": "Caisse de Communauté",
                     "Cout": 0,
                     "Position": 20
@@ -222,11 +232,6 @@
                     "Propriete": "Taxe de luxe",
                     "Cout": 0,
                     "Position": 22
-                },
-                {
-                    "Propriete": "Compagnie de distribution d'eau",
-                    "Cout": 0,
-                    "Position": 28
                 },
                 {
                     "Propriete": "Aller en prison",
