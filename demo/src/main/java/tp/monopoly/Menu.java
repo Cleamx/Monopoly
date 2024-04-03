@@ -97,7 +97,7 @@ public class Menu {
     * @param caseActuelle La case sur laquelle le joueur se trouve actuellement.
     */
     public void afficherPosition(Joueurs joueur, Cases caseActuelle) {
-        System.out.println("Le " + joueur.getNom() + " est à la case " + caseActuelle + "\n");
+        System.out.println(joueur.getNom() + " est à la case " + caseActuelle + "\n");
     }
 
 

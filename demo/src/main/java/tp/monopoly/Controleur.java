@@ -35,18 +35,12 @@ public class Controleur {
         for (int i = 0; i < nbr_round; i++) {
             menu.afficherPlateau(joueur1, joueur2);
             jouerTour(joueur1);
+            menu.afficherPlateau(joueur1, joueur2);
             jouerTour(joueur2);
         }
     }
 
 
-    /**
-    * Joue un tour pour le joueur donné.
-    * Affiche le tour du joueur, lance les dés, déplace le joueur sur le plateau,
-    * affiche la nouvelle position du joueur, et demande au joueur s'il veut acheter la case actuelle.
-    *
-    * @param joueur Le joueur qui joue ce tour.
-    */
     private void jouerTour(Joueurs joueur) {
         menu.afficherTour(joueur);
         des.lancerDes();
@@ -55,9 +49,17 @@ public class Controleur {
         int deplacement = desUn + desDeux;
         menu.afficherResultatDes(deplacement);
         int case_actuelle = joueur.setPlacement(deplacement);
-        menu.afficherPosition(joueur, plateau.getCases(case_actuelle));
-        if (menu.demanderAchat()) {
-            joueur.acheterPropriete(plateau.getCases(case_actuelle));
+        Cases caseActuelle = plateau.getCases(case_actuelle);
+        menu.afficherPosition(joueur, caseActuelle);
+    
+        // Vérifie si le coût de la propriété est 0
+        if (caseActuelle.getCout() != 0) {
+            if (menu.demanderAchat()) {
+                joueur.acheterPropriete(caseActuelle);
+            }
+        }
+        else {
+            System.err.println("---Vous êtes sur une case spéciale, vous ne pouvez pas acheter cette propriété.---");
         }
     }
 }
