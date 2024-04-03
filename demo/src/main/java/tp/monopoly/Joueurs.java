@@ -54,6 +54,11 @@ public class Joueurs {
         return this.enPrison;
     }
 
+    public void deduireArgent(int montant){
+        this.argent -= montant;
+        System.out.println("vous etes tombe sur une case impot ou taxe de luxe , vous avez paye " + montant + " il vous reste : " + this.argent);
+    }
+
     public void essayerSortirDePrison() {
         // Crée une instance de la classe Des
         Des des = new Des();

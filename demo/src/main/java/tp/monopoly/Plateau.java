@@ -48,6 +48,10 @@ public class Plateau {
 
                     if (nom.equals("Aller en prison")) {
                         cases = new CaseAllerEnPrison(position, nom, cout, groupe.getString("Nom"));
+                    } else if (nom.equals("Impôts sur le revenu")) {
+                        cases = new CaseImpotsSurLeRevenu(position, nom, cout, groupe.getString("Nom"));
+                    } else if (nom.equals("Taxe de luxe")) {
+                        cases = new CaseTaxeDeLuxe(position, nom, cout, groupe.getString("Nom"));
                     } else {
                         // Créez les autres types de cases ici
                         cases = new Cases(position, nom, cout, groupe.getString("Nom"));
