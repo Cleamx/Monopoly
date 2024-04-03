@@ -15,6 +15,31 @@ public class Menu {
     }
 
 
+    public void afficherPlateau(Joueurs joueur1, Joueurs joueur2) {
+        System.out.println("Plateau de jeu :");
+
+        // Affichage des propriétés possédées par le joueur 1
+        System.out.println(joueur1.getNom() + " possède : ");
+        for (Cases propriete : joueur1.getProprietes()) {
+            System.out.println("- " + propriete.getNom());
+        }
+
+        // Affichage des propriétés possédées par le joueur 2
+        System.out.println(joueur2.getNom() + " possède : ");
+        for (Cases propriete : joueur2.getProprietes()) {
+            System.out.println("- " + propriete.getNom());
+        }
+
+        // Affichage du plateau de jeu avec les positions des joueurs
+        for (int i = 0; i < 40; i++) {
+            String symboleJoueur1 = (joueur1.getPlacement() == i) ? "X" : " ";
+            String symboleJoueur2 = (joueur2.getPlacement() == i) ? "O" : " ";
+            System.out.print("|" + symboleJoueur1 + symboleJoueur2);
+        }
+        System.out.println("|");
+    }
+
+
     /**
     * Demande à l'utilisateur d'entrer le nom du joueur.
     *

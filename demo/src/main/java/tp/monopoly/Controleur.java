@@ -33,6 +33,7 @@ public class Controleur {
     private void jouer() {
         int nbr_round = menu.demanderNombreRounds();
         for (int i = 0; i < nbr_round; i++) {
+            menu.afficherPlateau(joueur1, joueur2);
             jouerTour(joueur1);
             jouerTour(joueur2);
         }

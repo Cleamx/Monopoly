@@ -16,7 +16,11 @@ public class Joueurs {
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
+    }
+
+    public List<Cases> getProprietes() {
+        return this.proprietes;
     }
 
     public int getPlacement(){

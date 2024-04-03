@@ -14,6 +14,10 @@ public class Cases {
         this.proprietaire = null;
     }
 
+    public String getNom() {
+        return this.nom;
+    }
+
     public int getPosition() {
         return this.id;
     }
