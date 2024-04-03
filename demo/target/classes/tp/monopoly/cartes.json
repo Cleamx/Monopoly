@@ -1,0 +1,98 @@
+{
+    "cartes_chance": [
+      {
+        "id": 1,
+        "description": "Amende pour excès de vitesse. Payez 15€.",
+        "action": "payer",
+        "montant": 15
+      },
+      {
+        "id": 2,
+        "description": "Recevez votre salaire. Montant : 200€.",
+        "action": "recevoir",
+        "montant": 200
+      },
+      {
+        "id": 3,
+        "description": "Vous avez gagné le deuxième prix de beauté. Recevez 10€.",
+        "action": "recevoir",
+        "montant": 10
+      },
+      {
+        "id": 4,
+        "description": "Banquez vous verse des dividendes. Recevez 50€.",
+        "action": "recevoir",
+        "montant": 50
+      },
+      {
+        "id": 5,
+        "description": "Vous avez été élu président du conseil d'administration. Payez à chaque joueur 50€.",
+        "action": "payer_de_tous",
+        "montant": 50
+      }
+    ],
+
+    "caisse_communaute": [
+      {
+        "id": 1,
+        "description": "Erreur de la banque en votre faveur. Recevez 200€.",
+        "action": "recevoir",
+        "montant": 200
+      },
+      {
+        "id": 2,
+        "description": "Payez les frais de scolarité. Payez 50€.",
+        "action": "payer",
+        "montant": 50
+      },
+      {
+        "id": 3,
+        "description": "Anniversaire ! Chaque joueur vous donne 10€.",
+        "action": "recevoir_de_tous",
+        "montant": 10
+      },
+      {
+        "id": 4,
+        "description": "Héritage. Recevez 100€.",
+        "action": "recevoir",
+        "montant": 100
+      },
+      {
+        "id": 5,
+        "description": "Vous avez gagné le concours de mots croisés. Recevez 20€.",
+        "action": "recevoir",
+        "montant": 20
+      },
+      {
+        "id": 6,
+        "description": "Payez la note du médecin. Payez 100€.",
+        "action": "payer",
+        "montant": 100
+      },
+      {
+        "id": 7,
+        "description": "Payez une amende pour ivresse. Payez 20€.",
+        "action": "payer",
+        "montant": 20
+      },
+      {
+        "id": 8,
+        "description": "Anniversaire de mariage. Recevez 25€ de chaque joueur.",
+        "action": "recevoir_de_tous",
+        "montant": 25
+      },
+      {
+        "id": 9,
+        "description": "Vous héritez de l'impôt sur le revenu. Recevez 20€.",
+        "action": "recevoir",
+        "montant": 20
+      },
+      {
+        "id": 10,
+        "description": "Erreur de calcul de la banque en votre défaveur. Payez 50€.",
+        "action": "payer",
+        "montant": 50
+      }
+    ]
+  }
+  
