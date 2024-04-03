@@ -57,6 +57,7 @@ public class Controleur {
         int case_actuelle = joueur.setPlacement(deplacement);
         Cases caseActuelle = plateau.getCases(case_actuelle);
         menu.afficherPosition(joueur, caseActuelle);
+        
     
         // Vérifie si le coût de la propriété est 0
         if (caseActuelle.getCout() != 0) {
@@ -65,7 +66,7 @@ public class Controleur {
             }
         }
         else {
-            System.err.println("---Vous êtes sur une case spéciale, vous ne pouvez pas acheter cette propriété.---");
+            System.err.println("---Vous êtes sur une case spéciale, vous ne pouvez pas acheter cette propriété---  \n");
         }
     }
 }

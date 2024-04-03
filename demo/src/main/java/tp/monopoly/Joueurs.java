@@ -6,7 +6,7 @@ public class Joueurs {
     String nom;
     int placement;
     int argent;
-    int MAX_DEPLACEMENT = 39;
+    int MAX_DEPLACEMENT = 40;
     private List<Cases> proprietes = new ArrayList<>();
 
     public Joueurs(String nom){
@@ -27,11 +27,16 @@ public class Joueurs {
         return this.placement;
     }
 
+    public int getArgent(){
+        return this.argent;
+    }
+
     public int setPlacement(int deplacement){
         this.placement += deplacement;
         if (this.placement >= MAX_DEPLACEMENT) {
             this.placement -= MAX_DEPLACEMENT;
             this.argent += 200;
+            System.out.println("Vous avez passé la case départ, vous recevez 200 !");
         }
         return this.placement;
     }
@@ -53,7 +58,11 @@ public class Joueurs {
             propriete.setProprietaire(this);
             System.out.println("Vous avez bien acheté la propriété, il vous reste : " + this.argent );
         } else {
-            System.out.println("Vous ne pouvez pas acheter cette propriété.");
+            if (propriete.getProprietaire() != null) {
+                System.out.println("La propriété appartient déjà à quelqu'un d'autre.");
+            } else {
+                System.out.println("Vous n'avez pas assez d'argent pour acheter cette propriété.");
+            }
         }
     }
 

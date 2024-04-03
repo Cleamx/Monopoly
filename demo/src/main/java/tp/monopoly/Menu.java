@@ -16,7 +16,7 @@ public class Menu {
 
 
     public void afficherPlateau(Joueurs joueur1, Joueurs joueur2) {
-        System.out.println("Plateau de jeu :");
+        System.out.println("------------------ Plateau de jeu ------------------");
 
         // Affichage des propriétés possédées par le joueur 1
         System.out.println(joueur1.getNom() + " possède : ");
@@ -62,7 +62,7 @@ public class Menu {
         System.out.println("\nChoisir le nombre de rounds :");
         int nbr_round = sc.nextInt();
         sc.nextLine(); // consomme le caractère de fin de ligne restant
-        System.out.println("Vous avez saisi : " + nbr_round);
+        System.out.println("Vous avez saisi : " + nbr_round + " rounds" + "\n");
         return nbr_round;
     }
 
@@ -98,6 +98,7 @@ public class Menu {
     */
     public void afficherPosition(Joueurs joueur, Cases caseActuelle) {
         System.out.println(joueur.getNom() + " est à la case " + caseActuelle + "\n");
+        System.err.println("il vous reste : " + joueur.getArgent() + "\n");
     }
 
 
