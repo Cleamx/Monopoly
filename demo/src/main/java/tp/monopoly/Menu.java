@@ -1,5 +1,7 @@
 package tp.monopoly;
 
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Menu {
@@ -59,10 +61,22 @@ public class Menu {
     * @return Le nombre de rounds choisi par l'utilisateur.
     */
     public int demanderNombreRounds() {
-        System.out.println("\nChoisir le nombre de rounds :");
-        int nbr_round = sc.nextInt();
+        int nbr_round = 0;
+        boolean validInput = false;
+        while (!validInput) {
+            try {
+                System.out.println("\nChoisir le nombre de rounds :");
+                nbr_round = sc.nextInt();
+                validInput = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Entrée invalide. Veuillez entrer un nombre entier.");
+                sc.next(); // consomme le jeton invalide
+            } catch (NoSuchElementException e) {
+                System.out.println("Aucune entrée trouvée. Veuillez réessayer.");
+                sc = new Scanner(System.in); // crée un nouveau Scanner
+            }
+        }
         sc.nextLine(); // consomme le caractère de fin de ligne restant
-        System.out.println("Vous avez saisi : " + nbr_round + " rounds" + "\n");
         return nbr_round;
     }
 
@@ -109,6 +123,15 @@ public class Menu {
     */
     public boolean demanderAchat() {
         System.out.println("\nVoulez vous acheter cette cases : ");
+        System.out.println("\n1. Oui");
+        System.out.println("\n2. Non");
+        int choix = sc.nextInt();
+        sc.nextLine(); // consomme le caractère de fin de ligne restant
+        return choix == 1;
+    }
+
+    public boolean demanderPayerAmende() {
+        System.out.println("\nVoulez vous payer l'amende de 50 pour sortir de prison : ");
         System.out.println("\n1. Oui");
         System.out.println("\n2. Non");
         int choix = sc.nextInt();

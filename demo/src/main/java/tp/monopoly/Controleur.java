@@ -49,24 +49,26 @@ public class Controleur {
      */
     private void jouerTour(Joueurs joueur) {
         menu.afficherTour(joueur);
-        des.lancerDes();
-        int desUn = des.getDesUn();
-        int desDeux = des.getDesDeux();
-        int deplacement = desUn + desDeux;
-        menu.afficherResultatDes(deplacement);
-        int case_actuelle = joueur.setPlacement(deplacement);
-        Cases caseActuelle = plateau.getCases(case_actuelle);
-        menu.afficherPosition(joueur, caseActuelle);
-        
     
-        // Vérifie si le coût de la propriété est 0
-        if (caseActuelle.getCout() != 0) {
-            if (menu.demanderAchat()) {
+        if (joueur.estEnPrison()) {
+            joueur.essayerSortirDePrison();
+        } else {
+            des.lancerDes();
+            int desUn = des.getDesUn();
+            int desDeux = des.getDesDeux();
+            int deplacement = desUn + desDeux;
+            menu.afficherResultatDes(deplacement);
+            int case_actuelle = joueur.setPlacement(deplacement);
+            Cases caseActuelle = plateau.getCases(case_actuelle);
+            menu.afficherPosition(joueur, caseActuelle);
+    
+            // Vérifie si la case actuelle est une CaseSpeciale
+            if (caseActuelle instanceof CaseSpeciale) {
+                ((CaseSpeciale) caseActuelle).appliquerEffet(joueur);
+            } else if (caseActuelle.getCout() != 0 && menu.demanderAchat()) {
+                // Le joueur est sur une case normale et peut acheter la propriété
                 joueur.acheterPropriete(caseActuelle);
             }
-        }
-        else {
-            System.err.println("---Vous êtes sur une case spéciale, vous ne pouvez pas acheter cette propriété---  \n");
         }
     }
 }
