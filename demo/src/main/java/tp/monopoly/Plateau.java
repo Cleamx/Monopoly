@@ -25,6 +25,11 @@ public class Plateau {
 
     }
 
+
+    public ArrayList<Cases> getListe() {
+        return this.liste;
+    }
+
     /**
      * Initialise les cases du plateau à partir d'un fichier JSON.
      * Le fichier JSON doit contenir un tableau de "Groupes", chaque groupe
@@ -34,7 +39,7 @@ public class Plateau {
      * Pour chaque emplacement, une nouvelle case est créée et ajoutée à la liste
      * des cases du plateau.
      */
-    private void initialise_Cases() {
+    void initialise_Cases() {
         String fichier;
         try {
             fichier = new String(Files.readAllBytes(Paths.get(getClass().getResource("propriete.json").toURI())));
@@ -104,5 +109,6 @@ public class Plateau {
     public String toString() {
         return "Cases [liste=" + liste + "]";
     }
+
 
 }
