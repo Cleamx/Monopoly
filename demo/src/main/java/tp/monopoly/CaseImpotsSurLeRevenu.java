@@ -1,8 +1,8 @@
 package tp.monopoly;
 
 public class CaseImpotsSurLeRevenu extends CaseSpeciale{
-    public CaseImpotsSurLeRevenu(int id, String nom, int cout, String groupe){
-        super(id, nom, cout, groupe);
+    public CaseImpotsSurLeRevenu(int id, String nom, int cout, String groupe, int[] loyer, int coutMaison, int coutHotel){
+        super(id, nom, cout, groupe , loyer, coutMaison, coutHotel);
     }
 
     @Override
