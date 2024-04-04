@@ -6,12 +6,18 @@
                 {
                     "Propriete": "Boulevard de Belleville",
                     "Cout": 60,
-                    "Position": 1
+                    "Position": 1,
+                    "CoutMaison": 50,
+                    "CoutHotel": 50,
+                    "Loyer": [2, 10, 30, 90, 160, 250]
                 },
                 {
                     "Propriete": "Rue Lecourbe",
                     "Cout": 60,
-                    "Position": 3
+                    "Position": 3,
+                    "CoutMaison": 50,
+                    "CoutHotel": 50,
+                    "Loyer": [4, 20, 60, 180, 320, 450]
                 }
             ]
         },
@@ -21,17 +27,26 @@
                 {
                     "Propriete": "Rue de Vaugirard",
                     "Cout": 100,
-                    "Position": 6
+                    "Position": 6,
+                    "CoutMaison": 50,
+                    "CoutHotel": 50,
+                    "Loyer": [6, 30, 90, 270, 400, 550]
                 },
                 {
                     "Propriete": "Rue de Courcelles",
                     "Cout": 100,
-                    "Position": 8
+                    "Position": 8,
+                    "CoutMaison": 50,
+                    "CoutHotel": 50,
+                    "Loyer": [6, 30, 90, 270, 400, 550]
                 },
                 {
                     "Propriete": "Avenue de la République",
                     "Cout": 120,
-                    "Position": 9
+                    "Position": 9,
+                    "CoutMaison": 50,
+                    "CoutHotel": 50,
+                    "Loyer": [8, 40, 100, 300, 450, 600]
                 }
             ]
         },
@@ -41,17 +56,26 @@
                 {
                     "Propriete": "Boulevard de la Villette",
                     "Cout": 140,
-                    "Position": 11
+                    "Position": 11,
+                    "CoutMaison": 100,
+                    "CoutHotel": 100,
+                    "Loyer": [10, 50, 150, 450, 625, 750]
                 },
                 {
                     "Propriete": "Avenue de Neuilly",
                     "Cout": 140,
-                    "Position": 13
+                    "Position": 13,
+                    "CoutMaison": 100,
+                    "CoutHotel": 100,
+                    "Loyer": [10, 50, 150, 450, 625, 750]
                 },
                 {
                     "Propriete": "Rue de Paradis",
                     "Cout": 160,
-                    "Position": 14
+                    "Position": 14,
+                    "CoutMaison": 100,
+                    "CoutHotel": 100,
+                    "Loyer": [12, 60, 180, 500, 700, 900]
                 }
             ]
         },
@@ -61,17 +85,26 @@
                 {
                     "Propriete": "Avenue Mozart",
                     "Cout": 180,
-                    "Position": 16
+                    "Position": 16,
+                    "CoutMaison": 100,
+                    "CoutHotel": 100,
+                    "Loyer": [14, 70, 200, 550, 750, 950]
                 },
                 {
                     "Propriete": "Boulevard Saint-Michel",
                     "Cout": 180,
-                    "Position": 18
+                    "Position": 18,
+                    "CoutMaison": 100,
+                    "CoutHotel": 100,
+                    "Loyer": [14, 70, 200, 550, 750, 950]
                 },
                 {
                     "Propriete": "Place Pigalle",
                     "Cout": 200,
-                    "Position": 19
+                    "Position": 19,
+                    "CoutMaison": 100,
+                    "CoutHotel": 100,
+                    "Loyer": [16, 80, 220, 600, 800, 1000]
                 }
             ]
         },
@@ -81,17 +114,26 @@
                 {
                     "Propriete": "Avenue Matignon",
                     "Cout": 220,
-                    "Position": 21
+                    "Position": 21,
+                    "CoutMaison": 150,
+                    "CoutHotel": 150,
+                    "Loyer": [18, 90, 250, 700, 875, 1050]
                 },
                 {
                     "Propriete": "Boulevard Malesherbes",
                     "Cout": 220,
-                    "Position": 23
+                    "Position": 23,
+                    "CoutMaison": 150,
+                    "CoutHotel": 150,
+                    "Loyer": [18, 90, 250, 700, 875, 1050]
                 },
                 {
                     "Propriete": "Avenue Henri-Martin",
                     "Cout": 240,
-                    "Position": 24
+                    "Position": 24,
+                    "CoutMaison": 150,
+                    "CoutHotel": 150,
+                    "Loyer": [20, 100, 300, 750, 925, 1100]
                 }
             ]
         },
@@ -101,17 +143,26 @@
                 {
                     "Propriete": "Faubourg Saint-Honoré",
                     "Cout": 260,
-                    "Position": 26
+                    "Position": 26,
+                    "CoutMaison": 150,
+                    "CoutHotel": 150,
+                    "Loyer": [22, 110, 330, 800, 975, 1150]
                 },
                 {
                     "Propriete": "Place de la Bourse",
                     "Cout": 260,
-                    "Position": 27
+                    "Position": 27,
+                    "CoutMaison": 150,
+                    "CoutHotel": 150,
+                    "Loyer": [22, 110, 330, 800, 975, 1150]
                 },
                 {
                     "Propriete": "Rue La Fayette",
                     "Cout": 280,
-                    "Position": 29
+                    "Position": 29,
+                    "CoutMaison": 150,
+                    "CoutHotel": 150,
+                    "Loyer": [24, 120, 360, 850, 1025, 1200]
                 }
             ]
         },
@@ -121,17 +172,27 @@
                 {
                     "Propriete": "Avenue de Breteuil",
                     "Cout": 300,
-                    "Position": 31
+                    "Position": 31,
+                    "CoutMaison": 200,
+                    "CoutHotel": 200,
+                    "Loyer": [26, 130, 390, 900, 1100, 1275]
+                    
                 },
                 {
                     "Propriete": "Avenue Foch",
                     "Cout": 300,
-                    "Position": 32
+                    "Position": 32,
+                    "CoutMaison": 200,
+                    "CoutHotel": 200,
+                    "Loyer": [26, 130, 390, 900, 1100, 1275]
                 },
                 {
                     "Propriete": "Boulevard des Capucines",
                     "Cout": 320,
-                    "Position": 34
+                    "Position": 34,
+                    "CoutMaison": 200,
+                    "CoutHotel": 200,
+                    "Loyer": [28, 150, 450, 1000, 1200, 1400]
                 }
             ]
         },
@@ -141,12 +202,18 @@
                 {
                     "Propriete": "Avenue des Champs-Élysées",
                     "Cout": 350,
-                    "Position": 37
+                    "Position": 37,
+                    "CoutMaison": 200,
+                    "CoutHotel": 200,
+                    "Loyer": [35, 175, 500, 1100, 1300, 1500]
                 },
                 {
                     "Propriete": "Rue de la Paix",
                     "Cout": 400,
-                    "Position": 39
+                    "Position": 39,
+                    "CoutMaison": 200,
+                    "CoutHotel": 200,
+                    "Loyer": [50, 200, 600, 1400, 1700, 2000]
                 }
             ]
         },
@@ -156,22 +223,26 @@
                 {
                     "Propriete": "Gare Montparnasse",
                     "Cout": 200,
-                    "Position": 5
+                    "Position": 5,
+                    "Loyer": [25, 50, 100, 200]
                 },
                 {
                     "Propriete": "Gare de Lyon",
                     "Cout": 200,
-                    "Position": 15
+                    "Position": 15,
+                    "Loyer": [25, 50, 100, 200]
                 },
                 {
                     "Propriete": "Gare du Nord",
                     "Cout": 200,
-                    "Position": 25
+                    "Position": 25,
+                    "Loyer": [25, 50, 100, 200]
                 },
                 {
                     "Propriete": "Gare Saint-Lazare",
                     "Cout": 200,
-                    "Position": 35
+                    "Position": 35,
+                    "Loyer": [25, 50, 100, 200]
                 }
             ]
         },
@@ -181,12 +252,14 @@
                 {
                     "Propriete": "Compagnie de distribution d'électricité",
                     "Cout": 150,
-                    "Position": 17
+                    "Position": 17,
+                    "Loyer": [4, 10]
                 },
                 {
                     "Propriete": "Compagnie de distribution d'eau",
                     "Cout": 150,
-                    "Position": 28
+                    "Position": 28,
+                    "Loyer": [4, 10]
                 }
             ]
         },

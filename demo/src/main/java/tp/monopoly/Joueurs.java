@@ -90,6 +90,16 @@ public class Joueurs {
         }
     }
 
+    public boolean possedeGroupeComplet(Cases caseActuelle) {
+        String groupe = caseActuelle.getGroupe();
+        for (Cases casePropriete : proprietes) {
+            if (casePropriete.getGroupe().equals(groupe) && casePropriete.getProprietaire() != this) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 
     /**
     * Permet au joueur d'acheter une propriété.

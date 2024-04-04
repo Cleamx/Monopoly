@@ -58,17 +58,34 @@ public class Plateau {
                     String nom = emplacement.getString("Propriete");
                     int cout = emplacement.getInt("Cout");
                     int position = emplacement.getInt("Position");
+                    int coutMaison = 0;
+                    if (emplacement.has("CoutMaison")) {
+                        coutMaison = emplacement.getInt("CoutMaison");
+                    }
+
+                    int coutHotel = 0;
+                    if (emplacement.has("CoutHotel")) {
+                        coutHotel = emplacement.getInt("CoutHotel");
+                    }
+
+                    int[] loyer = new int[6];
+                    if (emplacement.has("Loyer")) {
+                        JSONArray loyerJson = emplacement.getJSONArray("Loyer");
+                        for (int k = 0; k < loyerJson.length(); k++) {
+                            loyer[k] = loyerJson.getInt(k);
+                        }
+                    }
                     Cases cases;
 
                     if (nom.equals("Aller en prison")) {
-                        cases = new CaseAllerEnPrison(position, nom, cout, groupe.getString("Nom"));
+                        cases = new CaseAllerEnPrison(position, nom, cout, groupe.getString("Nom"), loyer, coutMaison, coutHotel);
                     } else if (nom.equals("Impôts sur le revenu")) {
-                        cases = new CaseImpotsSurLeRevenu(position, nom, cout, groupe.getString("Nom"));
+                        cases = new CaseImpotsSurLeRevenu(position, nom, cout, groupe.getString("Nom"), loyer, coutMaison, coutHotel);
                     } else if (nom.equals("Taxe de luxe")) {
-                        cases = new CaseTaxeDeLuxe(position, nom, cout, groupe.getString("Nom"));
+                        cases = new CaseTaxeDeLuxe(position, nom, cout, groupe.getString("Nom"), loyer, coutMaison, coutHotel);
                     } else {
                         // Créez les autres types de cases ici
-                        cases = new Cases(position, nom, cout, groupe.getString("Nom"));
+                        cases = new Cases(position, nom, cout, groupe.getString("Nom"), loyer, coutMaison, coutHotel);
                     }
 
                     this.liste.add(cases);
