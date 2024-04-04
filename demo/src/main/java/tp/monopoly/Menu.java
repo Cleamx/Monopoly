@@ -182,24 +182,28 @@ public class Menu {
         }
     }
 
-    public void afficherOptionsAchat(Joueurs joueur) {
-        int choix;
-        do {
-            System.out.println("Voulez-vous acheter une maison ou un hôtel sur cette propriété ?");
-            System.out.println("1. Acheter une maison");
-            System.out.println("2. Acheter un hôtel");
-            System.out.println("3. Ne rien faire");
-            choix = sc.nextInt();
-            switch (choix) {
-                case 1:
-                    acheterMaison(joueur);
-                    break;
-                case 2:
-                    acheterHotel(joueur);
-                    break;
-                default:
-                    break;
-            }
-        } while (choix != 3);
+    public void afficherOptionsAchat(Joueurs joueur, Cases caseActuelle) {
+        if (joueur.possedeGroupeComplet(caseActuelle)) {
+            int choix;
+            do {
+                System.out.println("Voulez-vous acheter une maison ou un hôtel sur cette propriété ?");
+                System.out.println("1. Acheter une maison");
+                System.out.println("2. Acheter un hôtel");
+                System.out.println("3. Ne rien faire");
+                choix = sc.nextInt();
+                switch (choix) {
+                    case 1:
+                        acheterMaison(joueur);
+                        break;
+                    case 2:
+                        acheterHotel(joueur);
+                        break;
+                    default:
+                        break;
+                }
+            } while (choix != 3);
+        } else {
+            System.out.println("Vous devez posséder toutes les propriétés d'un groupe pour acheter une maison ou un hôtel.");
+        }
     }
 }

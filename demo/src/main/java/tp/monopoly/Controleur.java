@@ -76,19 +76,22 @@ public class Controleur {
             if (caseActuelle instanceof CaseSpeciale) {
                 System.out.println("Le joueur " + joueur.getNom() + " est sur une CaseSpeciale.");
                 ((CaseSpeciale) caseActuelle).appliquerEffet(joueur);
-            } else if (caseActuelle.getCout() != 0 && menu.demanderAchat() && caseActuelle.getProprietaire() == null){
+            } else if (caseActuelle.getCout() != 0 && menu.demanderAchat() && caseActuelle.getProprietaire() == null) {
                 // Le joueur est sur une case normale et peut acheter la propriété
                 System.out.println("Le joueur " + joueur.getNom() + " est sur une case normale et peut acheter la propriété.");
                 joueur.acheterPropriete(caseActuelle);
             } else {
                 System.out.println("Le joueur " + joueur.getNom() + " est sur une case normale mais ne peut pas acheter la propriété.");
-                 // Si la case a un propriétaire, le joueur doit payer le loyer
+                // Si la case a un propriétaire
                 if (caseActuelle.getProprietaire() != null) {
-                    caseActuelle.payerLoyer(joueur);
-                }
-                // Si le joueur possède la case, il peut choisir d'acheter une maison ou un hôtel
-                else if (caseActuelle.getProprietaire() == joueur) {
-                    menu.afficherOptionsAchat(joueur);
+                    // Si le propriétaire est un autre joueur, le joueur doit payer le loyer
+                    if (caseActuelle.getProprietaire() != joueur) {
+                        caseActuelle.payerLoyer(joueur);
+                    }
+                    // Si le joueur possède la case, il peut choisir d'acheter une maison ou un hôtel
+                    else {
+                        menu.afficherOptionsAchat(joueur, caseActuelle);
+                    }
                 }
             }
         }
